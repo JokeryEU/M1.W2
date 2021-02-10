@@ -6,10 +6,6 @@
 //   const backgroundColor = document.getElementById("colorPicker");
 //   const sort = document.getElementById("sort");
 
-//   addTask.onclick = function (event) {
-//     const add = event.target;
-//   };
-
 function addNewTask() {
   const task = document.getElementById("newTask").value;
   const ul = document.getElementById("myTaskList");
