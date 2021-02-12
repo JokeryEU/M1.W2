@@ -10,7 +10,19 @@ const creatingNumbers = () => {
 };
 const button = document.getElementById("random");
 
-const randomNumber = () => Math.floor(Math.random() * 76) + 1;
+const playBingo = function () {
+  let randNum = Math.floor(Math.random() * 76 + 1);
+  console.log(randNum);
+  let selected = document.querySelector(".selected");
+  const num = document.querySelectorAll("h3");
+  num.forEach((i) => {
+    if (randNum === parseInt(i.innerText)) {
+      i.parentNode.classList.add("selected");
+    } else if (selected) {
+      i.parentNode.classList.remove("selected");
+    }
+  });
+};
 
 window.onload = () => {
   const allNumbers = creatingNumbers();
@@ -27,18 +39,6 @@ window.onload = () => {
     square.appendChild(num);
     bingoBoard.appendChild(square);
   }
-  button.onclick = () => {
-    pickedNumbers = randomNumber();
-    let selected = document.querySelector(".selected");
-    const numb = document.getElementsByTagName("h3");
-    for (let i = 0; i < pickedNumbers.length; i++) {
-      if (i === parseInt(numb)) {
-        pickedNumbers = i - 1;
-        selected.classList.add("selected");
-      } else selected.classList.remove("selected");
-      return pickedNumbers;
-    }
 
-    console.log(pickedNumbers);
-  };
+  button.onclick = () => playBingo();
 };
