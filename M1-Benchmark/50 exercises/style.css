@@ -1,0 +1,54 @@
+/* 11) Give a maximum width to the body and center it in the page */
+body {
+  max-width: 30%;
+  margin: 0 auto;
+}
+/* 12) Set every h1 to be centered */
+h1 {
+  font-size: 52px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+table {
+  width: 300px;
+  border-collapse: collapse;
+}
+
+table {
+  border: 2px solid black;
+  border-radius: 50px;
+}
+
+tr {
+  border: 1.5px dotted red;
+}
+/* Add a green border to each td */
+td {
+  border: 1px solid green;
+}
+
+img {
+  width: 100px;
+}
+/* 13) Change the color of each link in the page */
+a {
+  color: red;
+}
+/* 14) Create a class with a border */
+.frow {
+  border: 3px solid red;
+}
+/* 16) Add margin between every paragraph */
+p {
+  margin-top: 10px;
+}
+/* 17) Create a class which change font size and boldness */
+.cssTest {
+  font-size: 24px;
+  font-weight: bold;
+}
+/* 18) Create a class to hide a content */
+.hidden {
+  display: none;
+}
