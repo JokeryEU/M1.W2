@@ -123,4 +123,16 @@ window.onload = () => console.log("Page loaded");
 
 // 39) Write a function to add new items to a UL
 
+const addList = (x) => {
+  const ul = document.querySelector("ul");
+  const li = document.createElement("li");
+  li.innerText = x;
+  ul.appendChild(li);
+};
+
 // 40) Write a function to empty a list
+
+const emptyList = () => {
+  const ul = document.querySelector("ul");
+  ul.innerText = "";
+};
