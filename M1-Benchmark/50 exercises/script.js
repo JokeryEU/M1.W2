@@ -27,40 +27,88 @@ console.log(array);
 
 // 26) Create an array with 100 random numbers in it
 
-let random = [...Array(100)].map((e) => ~~(Math.random() * 100));
+let random = [...Array(100)].map(() => ~~(Math.random() * 100));
 
 console.log(random);
+
+const randomNumbers = () => {
+  let array = [];
+
+  for (let i = 0; i < 100; i++) {
+    let random = Math.floor(Math.random() * 100);
+    array.push(random);
+  }
+
+  return array;
+};
 
 // 27) Wrote a function to get the MAX and the MIN from the previously created array
 
 const minMax = () => {
-  let array = random;
+  let array = randomNumbers();
   let max = 0;
   let min = 999;
 
   for (let i = 0; i < array.length; i++) {
-    if (max < array[i]) {
-      let max = array[i];
-    } else if (min > array[i]) {
-      let min = array[i];
+    if (array[i] < min) {
+      min = array[i];
+    } else if (array[i] > max) {
+      max = array[i];
     }
   }
 
   console.log(min);
   console.log(max);
 };
-
-console.log(minMax());
+minMax();
 
 // 28) Create an array of arrays, in which every array has 10 random numbers
 
-const arrays = [];
-
+const arrays = () => {
+  let mainArray = [];
+  for (let i = 0; i < 10; i++) {
+    let array = [];
+    for (let x = 0; x < 10; x++) {
+      array.push(Math.floor(Math.random() * 100));
+    }
+    mainArray.push(array);
+  }
+  console.log(mainArray);
+};
+arrays();
 // 29) Create a function that gets 2 arrays and returns the longest one
 
 const comparing = (x, y) => (x.length > y.length ? x : y);
 
 // 30) Create a function that gets 2 arrays of numbers and returns the one with the higher sum of values
+
+const higherSum = (x, y) => {
+  let fSum = 0;
+
+  for (let i = 0; i < x.length; i++) {
+    fSum += x[i];
+  }
+
+  let sSum = 0;
+
+  for (let i = 0; i < y.length; i++) {
+    sSum += y[i];
+  }
+
+  if (fSum > sSum) {
+    return x;
+  }
+
+  if (sSum > fSum) {
+    return y;
+  } else {
+    console.log("They both have the same sum of values");
+
+    return null;
+  }
+};
+
+console.log(higherSum([2, 4], [4, 7]));
 
 // 31) Get element with ID "container" from the page
 
