@@ -119,7 +119,7 @@ const backgroundColor = () => {
 
 // 38) Console log "Page loaded" when the page is correctly loaded
 
-alert("Page loaded");
+window.onload = () => console.log("Page loaded");
 
 // 39) Write a function to add new items to a UL
 
